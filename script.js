@@ -5,15 +5,22 @@ function getComputerChoice() {
     let computerChoice;
     switch(randomNumber) {
         case 1:
-            computerChoice = 'Rock';
+            computerChoice = 'rock';
             break;
         case 2:
-            computerChoice = 'Paper';
+            computerChoice = 'paper';
             break;
         case 3:
-            computerChoice = 'Scissors';
+            computerChoice = 'scissors';
             break;
     }
     return computerChoice;
+}
+
+/* Write a function that returns user's choice */
+
+function getUserChoice() {
+    let userChoice = prompt('Rock, Paper or Scissors?');
+    return userChoice.toLowerCase();
 }
 
