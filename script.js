@@ -17,20 +17,22 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-/* Write a function that returns user's choice */
+/* Write a function that returns player's choice */
 
 function getPlayerChoice() {
     let userChoice = prompt('Rock, Paper or Scissors?');
-    return userChoice.toLowerCase();
+    return userChoice;
 }
 
 /* Write a function that plays a single round of Rock Paper Scissors and either replays the round if there's a tie or returns who won*/
 
 function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
     if(playerSelection === computerSelection) {
         return playRound(getPlayerChoice(), getComputerChoice());
     }
-    if(playerSelection === 'rock' && computerSelection === 'paper') {
+    else if(playerSelection === 'rock' && computerSelection === 'paper') {
         return 'You Lose! Paper beats Rock';
     }
     else if(playerSelection === 'rock' && computerSelection === 'scissors') {
@@ -50,8 +52,25 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
+/* Write a function that plays a best of five and displays who won at the end */
 
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for(let i = 0; i < 5; i++) {
+        if(playRound(getPlayerChoice(), getComputerChoice()).includes('You Win')) {
+            playerScore++;
+        }
+        else {
+            computerScore++;
+        }
+    }
+    if(playerScore > computerScore) {
+        console.log(`You Win! Your score: ${playerScore} Computer score: ${computerScore}`)
+    }
+    else {
+        console.log(`You Lose! Your score: ${playerScore} Computer score: ${computerScore}`)
+    }
+}
 
-
-
+game();
