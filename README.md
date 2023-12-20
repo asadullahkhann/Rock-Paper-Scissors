@@ -1,3 +1,3 @@
 # Rock-Paper-Scissors
 
-Toy JavaScript Project
+a grade school classic 'Rock Paper Scissors' written in javascript
