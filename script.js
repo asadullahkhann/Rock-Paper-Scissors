@@ -20,8 +20,8 @@ function getComputerChoice() {
 /* Write a function that returns player's choice */
 
 function getPlayerChoice() {
-    let userChoice = prompt('Rock, Paper or Scissors?');
-    return userChoice;
+    let playerChoice = prompt('Rock, Paper or Scissors?');
+    return playerChoice;
 }
 
 /* Write a function that plays a single round of Rock Paper Scissors and either replays the round if there's a tie or returns who won*/
