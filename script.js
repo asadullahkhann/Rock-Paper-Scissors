@@ -53,26 +53,3 @@ function playRound(playerSelection, computerSelection) {
 }
 
 /* Write a function that plays a best of five and displays who won at the end */
-
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    for(let i = 0; i < 5; i++) {
-        if(playRound(getPlayerChoice(), getComputerChoice()).includes('You Win')) {
-            playerScore++;
-            console.log(`Current Score: Player: ${playerScore} Computer: ${computerScore}`);
-        }
-        else {
-            computerScore++;
-            console.log(`Current Score: Player: ${playerScore} Computer: ${computerScore}`);
-        }
-    }
-    if(playerScore > computerScore) {
-        console.log(`You Win! Final Score: Player: ${playerScore} Computer: ${computerScore}`)
-    }
-    else {
-        console.log(`You Lose! Final Score: Player: ${playerScore} Computer: ${computerScore}`)
-    }
-}
-
-game();
