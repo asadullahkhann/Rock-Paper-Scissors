@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     if(playerSelection === computerSelection) {
-        return playRound(getPlayerChoice(), getComputerChoice());
+        return "It's a tie";
     }
     else if(playerSelection === 'rock' && computerSelection === 'paper') {
         return 'You Lose! Paper beats Rock';
