@@ -4,8 +4,6 @@ function getComputerChoice() {
     return choices[randomNumber];
 }
 
-/* Write a function that plays a single round of Rock Paper Scissors and either replays the round if there's a tie or returns who won*/
-
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
@@ -32,4 +30,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-/* Write a function that plays a best of five and displays who won at the end */
+let rounds = 0;
+let playerScore = 0;
+let computerScore = 0;
