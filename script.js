@@ -8,27 +8,28 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     if(playerSelection === computerSelection) {
-        return "It's a tie";
+        return "tie";
     }
     else if(playerSelection === 'rock' && computerSelection === 'paper') {
-        return 'You Lose! Paper beats Rock';
+        return 'lose!';
     }
     else if(playerSelection === 'rock' && computerSelection === 'scissors') {
-        return 'You Win! Rock beats Scissors';
+        return 'win';
     }
     else if(playerSelection === 'paper' && computerSelection === 'rock') {
-        return 'You Win! Paper beats Rock';
+        return 'win';
     }
     else if(playerSelection === 'paper' && computerSelection === 'scissors') {
-        return 'You Lose! Scissors beats Paper';
+        return 'lose';
     }
     else if(playerSelection === 'scissors' && computerSelection === 'rock') {
-        return 'You Lose! Rock beats Scissors';
+        return 'lose';
     }
     else if(playerSelection === 'scissors' && computerSelection === 'paper') {
-        return 'You Win! Scissors beats Paper';
+        return 'win';
     }
 }
+const outputDiv = document.querySelector('.output-div');
 
 let rounds = 0;
 let playerScore = 0;
@@ -40,5 +41,4 @@ btnContainer.addEventListener('click', (e) => {
     let playerChoice = e.target.classList[0];
     let computerChoice = getComputerChoice();
     let res = playRound(playerChoice, computerChoice);
-    
 })
