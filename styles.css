@@ -12,7 +12,7 @@
     background: linear-gradient(45deg, rgb(220, 0, 0), rgb(120, 0, 0), rgb(20, 0, 0));
 }
 
-p {
+.output-div {
     background-color: rgb(120, 0, 0);
     border-radius: 4px;
     padding: 6px;
