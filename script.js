@@ -5,8 +5,6 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
     if(playerSelection === computerSelection) {
         return "tie";
     }
@@ -30,6 +28,9 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function titlecase(str) {
+    return str[0].toUpperCase() + str.slice(1);
+}
 
 const outputDiv = document.querySelector('.output-div');
 
@@ -42,14 +43,9 @@ const btnContainer = document.querySelector('.btn-container');
 btnContainer.addEventListener('click', (e) => {
     let playerChoice = e.target.classList[0];
     let computerChoice = getComputerChoice();
-
+    
     let res = playRound(playerChoice, computerChoice);
 
-    playerChoice = playerChoice[0].toUpperCase() + 
-    playerChoice.slice(1);
-
-    computerChoice = computerChoice[0].toUpperCase() +
-    computerChoice.slice(1);
     switch(res) {
         case 'tie':
             outputDiv.innerText = "It's a tie. Play this round again"
@@ -57,14 +53,14 @@ btnContainer.addEventListener('click', (e) => {
         case 'win':
             rounds++;
             playerScore++;
-            outputDiv.innerText = `${playerChoice} beats ${computerChoice}! 
+            outputDiv.innerText = `${titlecase(playerChoice)} beats ${titlecase(computerChoice)}
             Player: ${playerScore} 
             Computer: ${computerScore}`;
             break;
         case 'lose':
             rounds++;
             computerScore++;
-            outputDiv.innerText = `${computerChoice} beats ${playerChoice}! 
+            outputDiv.innerText = `${titlecase(computerChoice)} beats ${titlecase(playerChoice)} 
             Player: ${playerScore} 
             Computer: ${computerScore}`;
             break;
