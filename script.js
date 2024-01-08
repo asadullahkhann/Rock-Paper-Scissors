@@ -33,3 +33,9 @@ function playRound(playerSelection, computerSelection) {
 let rounds = 0;
 let playerScore = 0;
 let computerScore = 0;
+
+const btnContainer = document.querySelector('.btn-container');
+
+btnContainer.addEventListener('click', (e) => {
+    
+})
