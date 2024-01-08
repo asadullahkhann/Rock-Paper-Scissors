@@ -34,10 +34,10 @@ function titlecase(str) {
 
 const outputDiv = document.querySelector('.output-div');
 
+const btnContainer = document.querySelector('.btn-container');
+
 let playerScore = 0;
 let computerScore = 0;
-
-const btnContainer = document.querySelector('.btn-container');
 
 btnContainer.addEventListener('click', (e) => {
     let playerChoice = e.target.classList[0];
