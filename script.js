@@ -34,7 +34,6 @@ function titlecase(str) {
 
 const outputDiv = document.querySelector('.output-div');
 
-let rounds = 0;
 let playerScore = 0;
 let computerScore = 0;
 
@@ -51,34 +50,31 @@ btnContainer.addEventListener('click', (e) => {
             outputDiv.innerText = "It's a tie. Play this round again"
             break;
         case 'win':
-            rounds++;
             playerScore++;
             outputDiv.innerText = `${titlecase(playerChoice)} beats ${titlecase(computerChoice)}
             Player: ${playerScore} 
             Computer: ${computerScore}`;
             break;
         case 'lose':
-            rounds++;
             computerScore++;
             outputDiv.innerText = `${titlecase(computerChoice)} beats ${titlecase(playerChoice)} 
             Player: ${playerScore} 
             Computer: ${computerScore}`;
             break;
     }
-    if(rounds === 5) {
-        if(playerScore > computerScore) {
-            outputDiv.innerText = `You Win!
-            Final Score:
-            Player: ${playerScore}
-            Computer: ${computerScore}`;
-        }
-        else {
-            outputDiv.innerText = `You Lose!
-            Final Score:
-            Player: ${playerScore}
-            Computer: ${computerScore}`;
-        }
-        rounds = 0;
+    if(playerScore === 5) {
+        outputDiv.innerText = `You Win!
+        Final Score:
+        Player: ${playerScore}
+        Computer: ${computerScore}`;
+        playerScore = 0
+        computerScore = 0;
+    }
+    else if(computerScore === 5) {
+        outputDiv.innerText = `You Lose!
+        Final Score:
+        Player: ${playerScore}
+        Computer: ${computerScore}`;
         playerScore = 0
         computerScore = 0;
         }
