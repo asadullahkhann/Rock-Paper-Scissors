@@ -37,5 +37,8 @@ let computerScore = 0;
 const btnContainer = document.querySelector('.btn-container');
 
 btnContainer.addEventListener('click', (e) => {
+    let playerChoice = e.target.classList[0];
+    let computerChoice = getComputerChoice();
+    let res = playRound(playerChoice, computerChoice);
     
 })
