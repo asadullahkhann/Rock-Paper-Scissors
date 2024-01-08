@@ -41,4 +41,23 @@ btnContainer.addEventListener('click', (e) => {
     let playerChoice = e.target.classList[0];
     let computerChoice = getComputerChoice();
     let res = playRound(playerChoice, computerChoice);
+    switch(res) {
+        case 'tie':
+            btnContainer.innerText = "It's a tie\n" + btnContainer.innerText;
+            break;
+        case 'win':
+            rounds++;
+            playerScore++;
+            btnContainer.innerText = `Current Score: 
+            Player Score: ${playerScore} 
+            Computer Score: ${computerScore}`;
+            break;
+        case 'lose':
+            rounds++;
+            computerScore++;
+            btnContainer.innerText = `Current Score: 
+            Player Score: ${playerScore} 
+            Computer Score: ${computerScore}`;
+            break;
+    }
 })
