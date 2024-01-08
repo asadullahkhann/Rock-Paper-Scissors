@@ -40,6 +40,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 btnContainer.addEventListener('click', (e) => {
+    outputDiv.style.padding = '6px';
     let playerChoice = e.target.classList[0];
     let computerChoice = getComputerChoice();
     
