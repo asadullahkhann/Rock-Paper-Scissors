@@ -1,27 +1,7 @@
-/* Write a function called getComputerChoice that randomly returns either Rock, Paper or Sicssors*/
-
 function getComputerChoice() {
-    const randomNumber = Math.floor(Math.random() * 3) + 1;
-    let computerChoice;
-    switch(randomNumber) {
-        case 1:
-            computerChoice = 'rock';
-            break;
-        case 2:
-            computerChoice = 'paper';
-            break;
-        case 3:
-            computerChoice = 'scissors';
-            break;
-    }
-    return computerChoice;
-}
-
-/* Write a function that returns player's choice */
-
-function getPlayerChoice() {
-    let playerChoice = prompt('Rock, Paper or Scissors?');
-    return playerChoice;
+    const choices = ['rock', 'paper', 'scissors'];
+    const randomNumber = Math.floor(Math.random() * 3);
+    return choices[randomNumber];
 }
 
 /* Write a function that plays a single round of Rock Paper Scissors and either replays the round if there's a tie or returns who won*/
